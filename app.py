@@ -52,13 +52,13 @@ def salary_by_work_model_histogram(df):
                    labels={"salary_in_usd": "Salary (USD)", "work_models": "Work Model"},
                    nbins=10, barmode="overlay")  # Overlayed histograms
     return hist
-st.markdown("<br><br>")
+st.markdown("<br><br>", unsafe_allow_html=True)
 st.header('Do you wonder about how the experience level of data workers impact its salary?')
-st.markdown("<br>")
+st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("Press the button to find out!")
-st.markdown("<br>")
+st.markdown("<br>", unsafe_allow_html=True)
 hist_button = st.button("I Will make a bar graph button!") # Make a button.
-st.markdown("<br>")        
+st.markdown("<br>", unsafe_allow_html=True)        
 if hist_button: #When pressing the button
     #Write the action being made and deploy the graph of according information. 
     st.write('Here is the Average Salary by Experience Level Bar Graph:')
@@ -68,13 +68,13 @@ if hist_button: #When pressing the button
         
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
-st.markdown("<br><br>")
+st.markdown("<br><br>", unsafe_allow_html=True)
 st.header("Distribution of Salary by Employment Type")
-st.markdown("<br>")           
+st.markdown("<br>", unsafe_allow_html=True)           
 st.subheader("Do you want to see how the employment type impacts on the salary made or how many workers are under each employment type?")
-st.markdown("<br>")
+st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("Click on the checkmark to find out!")
-st.markdown("<br>")
+st.markdown("<br>", unsafe_allow_html=True)
 
 build_histogram = st.checkbox('I am the checkmark')
 if build_histogram: #If the checkbox get clicked: 
