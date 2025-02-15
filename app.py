@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.header("Data Science Market Behaviour")
+st.header("Data Science Salary Analysis")
 #Run functions 
 def data():
     """_summary_
@@ -52,9 +52,13 @@ def salary_by_work_model_histogram(df):
                    labels={"salary_in_usd": "Salary (USD)", "work_models": "Work Model"},
                    nbins=10, barmode="overlay")  # Overlayed histograms
     return hist
-st.write('Wondering about how the experience level of data workers impact its salary?')
-hist_button = st.button("Press the button to find out!") # Make a button.
-        
+st.markdown("<br><br>")
+st.header('Do you wonder about how the experience level of data workers impact its salary?')
+st.markdown("<br>")
+st.subheader("Press the button to find out!")
+st.markdown("<br>")
+hist_button = st.button("I Will make a bar graph button!") # Make a button.
+st.markdown("<br>")        
 if hist_button: #When pressing the button
     #Write the action being made and deploy the graph of according information. 
     st.write('Here is the Average Salary by Experience Level Bar Graph:')
@@ -64,10 +68,15 @@ if hist_button: #When pressing the button
         
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
-            
-st.write("Looking to see if working remotely reduces the amount of salary made? Click on the checkmark! ")
+st.markdown("<br><br>")
+st.header("Distribution of Salary by Employment Type")
+st.markdown("<br>")           
+st.subheader("Do you want to see how the employment type impacts on the salary made or how many workers are under each employment type?")
+st.markdown("<br>")
+st.subheader("Click on the checkmark to find out!")
+st.markdown("<br>")
 
-build_histogram = st.checkbox('Histogram of amount of salary by work model')
+build_histogram = st.checkbox('I am the checkmark')
 if build_histogram: #If the checkbox get clicked: 
     st.write('Now Showing: Salary histogram by work model.')
     hist =   salary_by_work_model_histogram(data())
